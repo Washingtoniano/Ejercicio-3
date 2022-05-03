@@ -12,13 +12,34 @@ class lista():
             if bandera==True:
                 bandera=False
             else:
-                unregistro=registro()
+                dia=(Fila[0],Fila[1])
+                unregistro=registro(Fila[2],Fila[3],Fila[4])
                 for i in range (len(self.__indice)):
+                    self.__indice[i].append (dia)
                     for j in range (len(self.__indice[i])):
-                        self.__indice[i][j].appen(unregistro(Fila[0],Fila[1],Fila[2],Fila[3],Fila[4]))
+                        self.__indice[i][j].append (unregistro)
+            archivo.close()
     def opcion1(self):
         print ("Menor\n")
-        D=min(self.__indice[0])
-        H=min(self.__indice[1])
+        mid=min(self.__indice[0][0])
+        mih=min(self.__indice[0][1])
+        for i in range (len(self.__indice)):
+            for j in range (len (self.__indice[i])):
+             if self.__indice[i][j]==mih and self.__indice[i][j]==mid:
+               print (self.__indice[i][j])
+        print ("Mayor\n")
+    def opcion2(self):
+        temp=0
+        co=0
+        for i in range (len(self.__indice)):
+            co=co+1
+            for j in range (len(self.__indice[i])):
+                temp=self.__indice[i][j].tem()+temp
+        return (int(temp/co))
+    def opcion3 (self,d):
+        for re in self.__indice[d]:
+            print (re)
+
+
 
 

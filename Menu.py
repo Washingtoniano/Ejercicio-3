@@ -14,5 +14,8 @@ class menu():
             print ("Error")
     def opcion1(self):
         self.__lis.opcion1()
-   # def opcion2(self):
-   # def opcion3(self):
+    def opcion2(self):
+        print ("La temperatura promedio es:",self.__lis.opcion2())
+    def opcion3(self):
+        dia=int (input ("¿Que dia busca?\n"))
+        self.__lis.opcion3(dia)
