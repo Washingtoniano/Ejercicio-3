@@ -1,8 +1,9 @@
 import csv
 class registro():
-    __temperatura=0
-    __humedad:0
-    __presion:0
+
+    __temperatura=''
+    __humedad=''
+    __presion=''
     def __init__(self,temperatura,humedad,presion):
 
         self.__temperatura=temperatura
@@ -21,6 +22,8 @@ class registro():
         return (self.__temperatura,self.__presion,self.__humedad)
     def tem(self):
         return (self.__temperatura)
+  #  def dia(self):
+      #  return self.__dia
 
 
 

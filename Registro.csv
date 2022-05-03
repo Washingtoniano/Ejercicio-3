@@ -1,4 +1,4 @@
 número de día; hora; valor de la variable temperatura; valor de la variable humedad;  valor de la variable presión atmosférica;
-1;3:30;32°C;55%;139014Pa;
-2;3:59;31°C;54%;121314Pa;
-2;1:14;43°C;51%;121134Pa;
+1;3;32°C;55%;139014Pa;
+2;4;31°C;54%;121314Pa;
+2;5;43°C;51%;121134Pa;
