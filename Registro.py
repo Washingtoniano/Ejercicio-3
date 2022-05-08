@@ -1,29 +1,26 @@
+
 import csv
 class registro():
 
-    __temperatura=''
-    __humedad=''
-    __presion=''
-    def __init__(self,temperatura,humedad,presion):
-
+    __temperatura=int
+    __humedad=int
+    __presion=int
+    def __init__(self,temperatura=0,humedad=0,presion=0):
         self.__temperatura=temperatura
         self.__humedad=humedad
         self.__presion=presion
-    def agregar(self):
-        archivo=open("Registro.csv",'r')
-        reader=csv.reader(archivo,delimiter=';')
-        bandera=True
-        for Fila in reader:
-            if bandera==False:
-                bandera=True
-            else:
-                self.__indice.append(Fila[0],Fila[1],Fila[2],Fila[3],Fila[4])
+
     def mostrarD(self):
         return (self.__temperatura,self.__presion,self.__humedad)
     def tem(self):
-        return (self.__temperatura)
-  #  def dia(self):
-      #  return self.__dia
+        p=int(self.__temperatura)
+        return (p)
+    def pre(self):
+        return self.__presion
+    def hu(self):
+        return self.__humedad
+    def __str__(self):
+        return ("Temperatura:{}°C-Presion:{}Pa-Humedad:{}%".format(self.__temperatura,self.__presion,self.__humedad))
 
 
 
