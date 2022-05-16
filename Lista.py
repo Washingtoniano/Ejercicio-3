@@ -24,9 +24,9 @@ class lista():
                 self.__indice[dia][hora-1]=(unregistro)
         archivo.close()
     def opcion1(self):
-        print ("Menor\n")
+        print ("Menor")
         self.mostrarD()
-        print ("Mayor\n")
+        print ("Mayor")
         self.mostrarM()
 
     def opcion2(self):
@@ -44,7 +44,6 @@ class lista():
     def opcion3 (self,d):
         for i in range (len(self.__indice[d])):
             print ("Dia:{}-Hora:{}".format(d,i+1))
-            print (type(self.__indice[d][i]))
             print (self.__indice[d][i])
             #else:
               #  print ("Error")
@@ -88,9 +87,9 @@ class lista():
                 if (type(self.__indice[j][a])==Registro.registro):
                     if (self.__indice[j][a].tem()==maxT):
                         print ("Dia de mayor temperatura:{}\nHora de mayor temperatura:{}\n".format(j,a+1))
-                    elif (self.__indice[j][a].hu()==maxh):
+                    if (self.__indice[j][a].hu()==maxh):
                           print ("Dia de mayor humedad:{}\nHora de mayor humedad:{}\n".format(j,a+1))
-                    elif (self.__indice[j][a].pre()==maxp):
+                    if (self.__indice[j][a].pre()==maxp):
                           print ("Dia de mayor presion:{}\nHora de mayor presion:{}\n".format(j,a+1))
 
 

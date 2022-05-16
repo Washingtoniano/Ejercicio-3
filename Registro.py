@@ -1,5 +1,3 @@
-
-import csv
 class registro():
 
     __temperatura=int
