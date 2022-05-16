@@ -3,8 +3,10 @@ class menu():
     __lis=lista()
     def init (self):
         self.__va=None
-    def manejador(self,op):
+    def inicializar(self):
         self.__lis.agregar()
+    def manejador(self,op):
+
         if op==1:
             self.opcion1()
         elif op==2:
@@ -16,7 +18,7 @@ class menu():
     def opcion1(self):
         self.__lis.opcion1()
     def opcion2(self):
-        print ("La temperatura promedio es:",self.__lis.opcion2())
+        self.__lis.opcion2()
     def opcion3(self):
         dia=int (input ("¿Que dia busca?\n"))
         self.__lis.opcion3(dia)

@@ -13,12 +13,11 @@ class registro():
     def mostrarD(self):
         return (self.__temperatura,self.__presion,self.__humedad)
     def tem(self):
-        p=int(self.__temperatura)
-        return (p)
+        return (int(self.__temperatura))
     def pre(self):
-        return self.__presion
+        return int(self.__presion)
     def hu(self):
-        return self.__humedad
+        return int(self.__humedad)
     def __str__(self):
         return ("Temperatura:{}°C-Presion:{}Pa-Humedad:{}%".format(self.__temperatura,self.__presion,self.__humedad))
 

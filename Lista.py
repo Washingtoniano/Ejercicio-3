@@ -1,3 +1,4 @@
+import Registro
 from Registro import registro
 import csv
 class lista():
@@ -33,13 +34,17 @@ class lista():
             temp=0.0
             co=0
             for j in range (len(self.__indice[i])):
-                co=co+1
-                temp=self.__indice[i][j].tem()+temp
-            va=float(temp/co)
-            print ("En el mes {} la temperatura fue de {}°c".format(i,va))
+                if type(self.__indice[i][j])==Registro.registro:
+                    co=co+1
+                    temp=self.__indice[i][j].tem()+temp
+            if co!=0:
+                va=float(temp/co)
+                print ("En el mes {} la temperatura promedio fue de {}°c".format(i,va))
 
     def opcion3 (self,d):
         for i in range (len(self.__indice[d])):
+            print ("Dia:{}-Hora:{}".format(d,i+1))
+            print (type(self.__indice[d][i]))
             print (self.__indice[d][i])
             #else:
               #  print ("Error")
@@ -49,41 +54,44 @@ class lista():
         minp=999999999999999
         for i in range(len(self.__indice)):
             for j in range(len(self.__indice[i])):
-                if (self.__indice[i][j].tem()<minT):
-                    minT=self.__indice[i][j].tem()
-                elif (self.__indice[i][j].hu()<minh):
-                    minh=self.__indice[i][j].hu()
-                elif (self.__indice[i][j].pre()<minp):
-                    minp=self.__indice[i][j].pre()
+                if (type(self.__indice[i][j])==Registro.registro):
+                    if (self.__indice[i][j].tem()<minT):
+                            minT=self.__indice[i][j].tem()
+                    if (self.__indice[i][j].hu()<minh):
+                            minh=self.__indice[i][j].hu()
+                    if (self.__indice[i][j].pre()<minp):
+                            minp=self.__indice[i][j].pre()
         for j in range (len (self.__indice)):
             for a in range (len(self.__indice[j])):
-                if (self.__indice[j][a].tem()==minT):
-                    print ("Dia de menor temperatura{}\nHora de menor temperatura\n{}".format(j,a+1))
-                elif (self.__indice[j][a].hu()==minh):
-                    print ("Dia de menor humedad{}\nHora de menor humedad\n{}".format(j,a+1))
-                elif (self.__indice[j][a].pre()==minp):
-                    print ("Dia de menor presion{}\nHora de menor presion\n{}".format(j,a+1))
+                if (type(self.__indice[j][a])==Registro.registro):
+                    if (self.__indice[j][a].tem()==minT):
+                        print ("Dia de menor temperatura:{}\nHora de menor temperatura:{}\n".format(j,a+1))
+                    if (self.__indice[j][a].hu()==minh):
+                        print ("Dia de menor humedad:{}\nHora de menor humedad:{}\n".format(j,a+1))
+                    if (self.__indice[j][a].pre()==minp):
+                        print ("Dia de menor presion:{}\nHora de menor presion:{}\n".format(j,a+1))
     def mostrarM(self):
-        minT=0
-        minh=0
-        minp=0
+        maxT=0
+        maxh=0
+        maxp=0
         for i in range(len(self.__indice)):
-            for registro in self.__indice[i]:
-                tem=(registro.tem())
-                hu=(registro.hu())
-                pre=(registro.pre())
-                if (tem>minT and hu>minh and pre>minp):
-                    minh=hu
-                    minp=pre
-                    minT=tem
+            for j in range (len( self.__indice[i])):
+                if (type(self.__indice[i][j])==Registro.registro):
+                    if (self.__indice[i][j].tem()>maxT):
+                        maxT=self.__indice[i][j].tem()
+                    if (self.__indice[i][j].hu()>maxh):
+                        maxh=self.__indice[i][j].hu()
+                    if (self.__indice[i][j].pre()>maxp):
+                        maxp=self.__indice[i][j].pre()
         for j in range (len (self.__indice)):
             for a in range (len(self.__indice[j])):
-                if (self.__indice[j][a].tem()==minT):
-                    print ("Dia de mayor temperatura{}\nHora de mayor temperatura\n{}".format(j,a+1))
-                elif (self.__indice[j][a].hu()==minh):
-                      print ("Dia de mayor humedad{}\nHora de mayor humedad\n{}".format(j,a+1))
-                elif (self.__indice[j][a].pre()==minp):
-                      print ("Dia de mayor presion{}\nHora de mayor presion\n{}".format(j,a+1))
+                if (type(self.__indice[j][a])==Registro.registro):
+                    if (self.__indice[j][a].tem()==maxT):
+                        print ("Dia de mayor temperatura:{}\nHora de mayor temperatura:{}\n".format(j,a+1))
+                    elif (self.__indice[j][a].hu()==maxh):
+                          print ("Dia de mayor humedad:{}\nHora de mayor humedad:{}\n".format(j,a+1))
+                    elif (self.__indice[j][a].pre()==maxp):
+                          print ("Dia de mayor presion:{}\nHora de mayor presion:{}\n".format(j,a+1))
 
 
 
