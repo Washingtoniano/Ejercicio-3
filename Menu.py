@@ -13,8 +13,8 @@ class menu():
             self.opcion2()
         elif op==3:
             self.opcion3()
-        elif op==5:
-            self.opcion5()
+        else:
+            print("Error")
     def opcion1(self):
         self.__lis.opcion1()
     def opcion2(self):
@@ -22,5 +22,3 @@ class menu():
     def opcion3(self):
         dia=int (input ("¿Que dia busca?\n"))
         self.__lis.opcion3(dia)
-    def opcion5(self):
-        print (self.__lis.mostrar())
